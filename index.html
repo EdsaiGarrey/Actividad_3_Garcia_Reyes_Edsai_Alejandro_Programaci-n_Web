@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 3 - Modal Reutilizable</title>
+    <link rel="stylesheet" href="css/componente.css">
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1>Modal Reutilizable JS</h1>
+        <p>
+            Este componente permite mostrar ventanas emergentes personalizadas
+            usando JavaScript, HTML y CSS.
+        </p>
+
+        <div class="botones">
+            <button onclick="mostrarModal({
+                titulo: 'Información',
+                mensaje: 'Este es un modal informativo reutilizable.',
+                tipo: 'info',
+                textoBoton: 'Entendido'
+            })">
+                Abrir modal informativo
+            </button>
+
+            <button onclick="mostrarModal({
+                titulo: 'Advertencia',
+                mensaje: 'Debes revisar los datos antes de continuar.',
+                tipo: 'advertencia',
+                textoBoton: 'Revisar'
+            })">
+                Abrir modal de advertencia
+            </button>
+
+            <button onclick="mostrarModal({
+                titulo: 'Éxito',
+                mensaje: 'La operación se realizó correctamente.',
+                tipo: 'exito',
+                textoBoton: 'Aceptar'
+            })">
+                Abrir modal de éxito
+            </button>
+        </div>
+    </main>
+
+    <script src="js/componente.js"></script>
+</body>
+</html>
