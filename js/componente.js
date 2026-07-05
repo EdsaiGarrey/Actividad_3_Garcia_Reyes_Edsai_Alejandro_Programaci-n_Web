@@ -1,4 +1,3 @@
-
 /**
  * Muestra un modal reutilizable con título, mensaje, tipo y texto de botón.
  * @param {Object} opciones - Opciones para personalizar el modal.
@@ -13,6 +12,8 @@ function mostrarModal(opciones) {
     const tipo = opciones.tipo || "info";
     const textoBoton = opciones.textoBoton || "Cerrar";
 
+    cerrarModal();
+
     const fondo = document.createElement("div");
     fondo.classList.add("modal-fondo");
 
@@ -23,11 +24,17 @@ function mostrarModal(opciones) {
     caja.innerHTML = `
         <h2>${titulo}</h2>
         <p>${mensaje}</p>
-        <button onclick="cerrarModal()"> ${textoBoton} </button>
+        <button type="button" onclick="cerrarModal()">${textoBoton}</button>
     `;
 
     fondo.appendChild(caja);
     document.body.appendChild(fondo);
+
+    fondo.addEventListener("click", function(evento) {
+        if (evento.target === fondo) {
+            cerrarModal();
+        }
+    });
 
     console.log("Modal abierto:", titulo);
 }
