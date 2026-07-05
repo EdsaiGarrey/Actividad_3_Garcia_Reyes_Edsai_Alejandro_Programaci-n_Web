@@ -1,39 +1,77 @@
+/* Configuración general responsive */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f1f4f8;
-    margin: 0;
-    padding: 0;
+    min-height: 100vh;
+    padding: clamp(14px, 4vw, 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Contenedor principal adaptable */
 .contenedor {
-    width: 600px;
-    margin: 80px auto;
+    width: min(100%, 700px);
     background-color: white;
-    padding: 30px;
+    padding: clamp(20px, 5vw, 35px);
     text-align: center;
     border: 1px solid #cccccc;
+    border-radius: 10px;
 }
 
+/* Títulos y textos */
 h1 {
     color: #1f2937;
+    font-size: clamp(28px, 7vw, 42px);
+    margin-top: 0;
+    margin-bottom: 15px;
+    overflow-wrap: break-word;
 }
 
 p {
     color: #555555;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.5;
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-wrap: break-word;
 }
 
+/* Contenedor de botones */
 .botones {
+    width: 100%;
     margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
 }
 
+/* Botones adaptables */
 button {
-    padding: 12px 18px;
-    margin: 8px;
+    flex: 1 1 180px;
+    max-width: 100%;
+    padding: 13px 18px;
     border: none;
+    border-radius: 6px;
     background-color: #2563eb;
     color: white;
     cursor: pointer;
-    font-size: 15px;
+    font-size: clamp(15px, 3vw, 17px);
 }
 
 button:hover {
@@ -43,21 +81,24 @@ button:hover {
 /* Fondo oscuro del modal */
 .modal-fondo {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100dvh;
+    padding: clamp(14px, 5vw, 40px);
     background-color: rgba(0, 0, 0, 0.55);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
 /* Caja principal del modal */
 .modal-caja {
-    width: 380px;
+    width: min(100%, 420px);
+    max-height: 90dvh;
+    overflow-y: auto;
     background-color: white;
-    padding: 25px;
+    padding: clamp(20px, 5vw, 30px);
     text-align: center;
     border-radius: 8px;
     border-top: 8px solid #2563eb;
@@ -67,15 +108,19 @@ button:hover {
 .modal-caja h2 {
     margin-top: 0;
     color: #1f2937;
+    font-size: clamp(24px, 6vw, 32px);
+    overflow-wrap: break-word;
 }
 
 .modal-caja p {
     color: #444444;
     margin-bottom: 20px;
+    overflow-wrap: break-word;
 }
 
 .modal-caja button {
     width: 100%;
+    flex: none;
     margin-top: 10px;
 }
 
@@ -90,4 +135,25 @@ button:hover {
 
 .modal-exito {
     border-top-color: #16a34a;
+}
+
+/* Ajuste extra para pantallas muy angostas */
+@media (max-width: 420px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .contenedor {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        flex: none;
+    }
 }
