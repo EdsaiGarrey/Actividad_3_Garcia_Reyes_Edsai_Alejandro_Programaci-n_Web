@@ -104,7 +104,7 @@ cerrarModal();
 ### Consola mostrando resultados
 
 ![Consola mostrando resultados](img/consola-modal.png)
-Enlace del video:
+Enlace del video:  https://drive.google.com/file/d/1hTC3wCnq-W7DeZxeYpeQoIx0SDykxQoQ/view?usp=drive_link
 
 ---
 
