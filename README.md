@@ -97,23 +97,14 @@ cerrarModal();
 
 ## Capturas de pantalla
 
-### Componente funcionando
+### Modal funcionando
 
 ![Modal funcionando](img/modal-funcionando.png)
 
 ### Consola mostrando resultados
 
-![Consola funcionando](img/consola-modal.png)
-
----
-
-## Video demostrativo
-
-El video demostrativo tiene una duración máxima de 1 minuto. En él se explica qué problema resuelve el componente, cómo se instala, cómo se usa y se muestra el modal funcionando en vivo.
-
+![Consola mostrando resultados](img/consola-modal.png)
 Enlace del video:
-
-Pendiente por agregar.
 
 ---
 
